@@ -1,10 +1,10 @@
 import os
 import pandas as pd
-import time
+#import time
 
 def process_csv_files(storage_location, delimiter):
     # Used for comparing Pandas run time to CSV Module run time
-    start_time = time.time()
+    #start_time = time.time()
     csv_files = [file for file in os.listdir(storage_location) if file.endswith('.csv')]
 
     if not csv_files:
@@ -21,9 +21,9 @@ def process_csv_files(storage_location, delimiter):
         df.to_csv(new_file_path, sep='|', index=False)
         print(f"\nDataFrame saved to {new_file_path} with '|' as the separator.")
         
-    end_time = time.time()
-    elapsed_time = end_time - start_time
-    print(f"\nTotal time taken: {elapsed_time:.2f} seconds")
+    #end_time = time.time()
+    #elapsed_time = end_time - start_time
+    #print(f"\nTotal time taken: {elapsed_time:.2f} seconds")
 
 storage_location = input("Input path to folder containing CSV files: ")
 delimiter = input("Input the delimiter type used in the CSV files: ")
